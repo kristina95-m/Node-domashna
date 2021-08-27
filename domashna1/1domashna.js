@@ -1,23 +1,23 @@
 const cities = [
     {
       name: 'Skopje',
-      population: '6000000'
+      population: '500'
     },
     {
       name: 'Barcelona',
-      population: '9000000'
+      population: '65'
     },
     {
       name: 'Bilbao',
-      population: '30000000'
+      population: '833'
     }
   ];
   
-  let minPopulation = 0;
+  let minPopulation = Infinity;
   let nameOfCityMinPopulation = '';
   
   cities.forEach(city => {
-    if (parseInt(city.population) > minPopulation) {
+    if (parseInt(city.population) < minPopulation) {
       minPopulation = city.population;
       nameOfCityMinPopulation = city.name;
     }
