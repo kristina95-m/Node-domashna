@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <table>
+      <thead>
+        <td>
+          Name
+        </td>
+        <td>
+          Surname
+        </td>
+        <td>
+          EMBG
+        </td>
+        <td>
+          Gender
+        </td>
+      </thead>
+
+      <tbody>
+        <% employees.forEach(employee => { %>
+          <tr>
+            <td>
+              <%= employee.name %>
+            </td>
+            <td>
+              <%= employee.surname %>
+            </td>
+            <td>
+              <%= employee.EMBG %>
+            </td>
+            <td>
+              <%= employee.gender %>
+            </td>
+          </tr>
+       <% }); %>
+      </tbody>
+    </table>
+
+    <form action="/employees" method="post">
+      Name <input type="text" name="name"/><br/>
+      Surname <input type="text" name="surname"/><br/>
+      EMBG <input type="number" name="EMBG"/><br/>
+      Gender <input type="radio" name="gender"/><label>Female</label><input type="radio" name="gender"/><label>Male</label><br/>
+      <button type="submit">Add employee</button>
+    </form>
+
+    <br/>
+    <br/>
+    <br/>
+    
+    <table>
+      <thead>
+        <td>
+          Model
+        </td>
+        <td>
+          Serie
+        </td>
+        <td>
+          Year
+        </td>
+      </thead>
+
+      <tbody>
+        <% cars.forEach(car => { %>
+          <tr>
+            <td>
+              <%= car.model %>
+            </td>
+            <td>
+              <&= car.serie %>
+            </td>
+            <td>
+              <%= car.year %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <form action="/cars" method="post">
+      Model <input type="text" name="model"/><br/>
+      Serie <input type="text" name="serie"/><br>
+      Year <input type="number" name="year"/><br/>
+      <button type="submit">Add car</button><br/>
+      <h4>Which car is the best?</h4>
+      <input type="checkbox" name="car" value="Mercedes"/><label>Mercedes</label>
+      <input type="checkbox" name="car" value="BMW"/><label>BMW</label>
+      <input type="checkbox" name="car" value="Audi"/><label>Audi</label><br/>
+      <select>
+        <optgroup label="German Cars">
+          <option>BMW</option>
+          <option>Mercedes</option>
+          <option>Audi</option>
+        </optgroup>
+        <optgroup label="Italian Cars">
+          <option>Ferrari</option>
+          <option>Maserati</option>
+          <option>Lancia</option>
+        </optgroup>
+      </select>
+      
+    </form>
+
+  </body>
+</html>
