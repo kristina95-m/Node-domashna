@@ -5,11 +5,11 @@ const employees = [];
 
 router
     .get('/', (req, res) => {
-        res.render('index', { title: 'Express', employees:employees });
+        res.render('employees', { employees:employees });
     })
-    .post('/employees', (req, res) => {
+    .post('/', (req, res) => {
         employees.push(req.body);
-        res.redirect('/');
+        res.redirect('/employees');
     });
 
 module.exports = router;

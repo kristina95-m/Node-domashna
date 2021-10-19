@@ -3,13 +3,14 @@ var router = express.Router();
 
 const cars = [];
 
+
 router
     .get('/', (req, res) => {
-        res.render('index', { title: 'Express', employees:employees, cars:cars });
+        res.render('cars', { cars:cars });
     })
-    .post('/cars', (req, res) => {
+    .post('/', (req, res) => {
         cars.push(req.body);
-        res.redirect('/');
+        res.redirect('/cars');
     });
 
 module.exports = router;
