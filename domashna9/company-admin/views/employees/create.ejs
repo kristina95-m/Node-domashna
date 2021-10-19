@@ -20,11 +20,11 @@
     <input type="number" class="form-control" placeholder="Monthly Salary" aria-label="Amount (to the nearest dollar)" name="salary">
     <span class="input-group-text">.00</span>
   </div>
-  <select class="form-select mt-3" aria-label="Default select example" name="position">
-    <option selected>Job title</option>
-    <option value="Technical worker">Technical worker</option>
-    <option value="Manager">Manager</option>
-    <option value="Owner">Owner</option>
+  <select class="form-select mt-3" name="job_title" aria-label="Default select example">
+    <option selected>Select job title</option>
+    <% jobTitles.forEach(jobTitle => { %>
+      <option value="<%= jobTitle._id %>"><%= jobTitle.name %></option>
+    <% }) %>
   </select>
   <button type="submit" class="btn btn-primary mt-3">Create</button>
 </form>
